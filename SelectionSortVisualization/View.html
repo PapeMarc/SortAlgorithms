@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selection Sort</title>
+    <style>@import "View.css";</style>
+</head>
+<body>
+    <div style="display: flex; justify-content: center; justify-self: center; padding-top: 30vh;" id="btnContainer">
+        <button id="btn" style="width: 6vw; height: 3vh; cursor: pointer;">Start</button>
+    </div>
+    <canvas id="canvas">
+
+    </canvas>
+</body>
+
+<audio id="sound1" src="" preload="auto"></audio>
+<script src="SelectionSort.js"></script>
+<script>
+
+    const audiocontext = new (window.AudioContext || window.webkitAudioContext)();
+    const oscillator = audiocontext.createOscillator();
+    oscillator.type = "square";
+
+    var btn = document.getElementById("btn");
+    btn.addEventListener("click", function(){
+        document.getElementById("btnContainer").style = "display: none;";
+        selectionSort();
+    })
+
+    oscillator.stop();
+    oscillator.disconnect();
+
+</script>
+</html>
